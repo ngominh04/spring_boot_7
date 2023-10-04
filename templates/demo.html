@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/index}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">-->
+<!--    <script>-->
+<!--        // console.log(1111111111111111111111)-->
+<!--        $(document).ready(function() {-->
+<!--            // $(".one:first").show();-->
+<!--            $(".two").addClass("d-none").hide();-->
+<!--        });-->
+<!--    </script>-->
+</head>
+<body>
+
+<!--<div th:object="${student}">-->
+<!--    <h1 style="color: blueviolet">Họ <span th:text= "${student.frist_name}"></span></h1>-->
+<!--    <h1 style="color: blueviolet">Tên <span th:text= "${student.last_name}"></span></h1>-->
+<!--</div>-->
+<!--///-->
+
+
+
+<div layout:fragment="content">
+    <div class="one" >
+        <table style="width:25%">
+            <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Số Môn Thi</th>
+            </thead>
+            <tbody>
+            <tr th:each="student: ${studentTbale}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.soMonThi}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/index}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="two" style="margin-left: 1rem">
+    <table style="width:50%" border="1px solid black" >
+      <tr >
+        <th ><center>Tên lớp: </center> </th>
+        <th ><center>Tên sinh viên: </center> </th>
+        <th ><center>Điểm:</center> </th>
+      </tr>
+      <tr style="text-align: center" th:each="student: ${students_point_max}">
+        <td   th:text="${student.className}"></td>
+        <td  th:text="${student.name}"></td>
+        <td  th:text="${student.point}"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
